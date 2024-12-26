@@ -1,0 +1,82 @@
+
+
+
+<div class="resumer-overlay">
+  <div class="resumer-container">
+    <h1>Résumé</h1>
+    <div class="form-row">
+      <div class="form-group1">
+        <label for="date">Date</label>
+        <input
+          id="date"
+          type="date"
+          [(ngModel)]="date"
+         
+        />
+      </div>
+      <div class="form-group2">
+        <label for="medecin">Médecin</label>
+        <input
+          id="medecin"
+          type="text"
+          [(ngModel)]="medecin"
+          
+        />
+      </div>
+    </div>
+    <textarea
+      placeholder="Description"
+      [(ngModel)]="description"
+      rows="5"
+      class="description-box"
+    ></textarea>
+    <textarea
+      placeholder="Diagnostique"
+      [(ngModel)]="diagnostique"
+      rows="3"
+      class="diagnostique-box"
+    ></textarea>
+  
+    <!-- Buttons to add sections -->
+    <div class="add-buttons">
+      <button class="btn-add" (click)="openModal('ordonnance')">+ Ajouter Ordonnance</button>
+      <button class="btn-add" (click)="openModal('bio')">+ Bilan Biologique</button>
+      <button class="btn-add" (click)="openModal('radio')">+ Bilan Radiologique</button>
+      <button class="btn-add" (click)="openModal('antecedent')">+ Ajouter Antécédent</button>
+    </div>
+  
+    <!-- Modal -->
+    <div *ngIf="showModal" >
+      <div >
+        <button class="close-btn" (click)="closeModal()">X</button>
+        <div *ngIf="modalType === 'radio'">
+          <app-bilan-radiologique
+            (cancel)="onCancelBilanRadiologique()"
+            (confirm)="onBilanRadiologiqueConfirm($event)"
+          ></app-bilan-radiologique>
+        </div>
+        <div *ngIf="modalType === 'bio'">
+          <app-bilan-biologique
+            (cancel)="onCancelBilanBiologique()"
+            (confirm)="onBilanBiologiqueConfirm($event)"
+          ></app-bilan-biologique>
+        </div>
+        <div *ngIf="modalType === 'antecedent'">
+          <app-antecedent
+            (cancel)="onCancelantecedent()"
+            (confirm)="onantecedentConfirm($event)"
+          ></app-antecedent>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button class="btn-cancel" (click)="onCancel()">Annuler</button>
+      <button class="btn-confirm" (click)="onConfirm()">Confirmer</button>
+    </div>
+  </div>
+
+</div>
+  
+  

@@ -1,0 +1,66 @@
+<div class="container">
+    <!-- Conditionally display the ResumerComponent exactly on top of the table -->
+    <app-resumer *ngIf="showResumer" class="resumer-overlay"></app-resumer>
+  
+    <table class="modern-table" >
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Examen biologique</th>
+          <th>Examen radiologique</th>
+          <th>Résumé</th>
+          <th>Médecin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consultation of consultations">
+          <td>{{ consultation.date }}</td>
+          <td>
+            <button class="btn" (click)="onDisplayClick('biologique', consultation)">Afficher</button>
+          </td>
+          <td>
+            <button class="btn" (click)="onDisplayClick('radiologique', consultation)">Afficher</button>
+          </td>
+          <td>
+            <button class="btn" (click)="onDisplayClick('resume', consultation)">Afficher</button>
+          </td>
+          <td>{{ consultation.medecin }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <app-consultation-details class="overlay-container" *ngIf="showDetails && selectedConsultation" 
+    [consultation]="selectedConsultation" [displayType]="selectedDisplayType" (close)="closeDetails()">
+  </app-consultation-details>
+  
+    <!-- Button to show or hide the ResumerComponent -->
+    <button class="add-button" (click)="toggleResumer()">Ajouter consultation</button>
+    <div *ngIf="showResumer" >
+   <app-resumer 
+    (cancel)=" onCancelResume()"
+    (confirm)="onResumeConfirm($event)">
+   </app-resumer>
+
+    </div>
+
+
+
+ <!-- 
+    <div *ngIf="selectedConsultation"> <div *ngIf="selectedDisplayType === 'resume'">
+      <h2>Résumé</h2>
+      <p>{{ selectedConsultation?.description }}</p>
+      <p>{{ selectedConsultation?.diagnostique }}</p>
+    </div>
+  
+    <div *ngIf="selectedDisplayType === 'radiologique'">
+      <h2>Examen Radiologique</h2>
+      <p>{{ selectedConsultation?.bilanRadiologiqueData }}</p>
+    </div>
+  
+    <div *ngIf="selectedDisplayType === 'biologique'">
+      <h2>Examen Biologique</h2>
+      <p>{{ selectedConsultation?.bilanBiologiqueData }}</p>
+    </div>
+  </div> -->
+  </div>
+  

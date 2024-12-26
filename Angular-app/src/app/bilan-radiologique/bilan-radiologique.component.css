@@ -1,0 +1,145 @@
+.bilan-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+
+
+.modal-container {
+  background: #fff;
+  padding: 5vh; /* Use viewport height for padding */
+  border-radius: 2vh; /* Make border-radius responsive */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 40vw; /* Responsive width */
+  
+  height: auto; /* Allow the height to adapt */
+  max-height: 80vh; /* Limit modal height */
+  overflow-y: auto; /* Scroll if content overflows */
+  box-sizing: border-box;
+}
+
+h3 {
+  text-align: left;
+  margin-bottom: 3vh; /* Adjust spacing with viewport height */
+  border-bottom: 0.4vh solid #D5D5D5; /* Responsive underline */
+  padding-bottom: 3vh;
+  font-size: 3.7vh; /* Responsive font size */
+  font-weight: bold;
+}
+
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 3vw; /* Space between form elements */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center; 
+  margin-top: 2vh;
+}
+
+
+
+.form-group {
+  flex:  1 30%; /* Full width by default */
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 1vh;
+  font-size: 2.5vh; /* Responsive font size */
+  font-weight: bold;
+}
+
+.form-input, .form-select {
+  padding: 1.2vh;
+  font-size: 2.5vh;
+  border: 0.3vh solid #ccc;
+  border-radius: 0.5vh;
+  width: 100%; /* Full width */
+  box-sizing: border-box;
+ 
+
+}
+
+.actions {
+  
+  margin-top: 4vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw; /* Space between buttons */
+  justify-content:  flex-end;
+}
+
+.btn-cancel, .btn-confirm {
+  
+  
+
+  padding: 1.5vh 3vw; /* Responsive padding */
+  font-size: 2vh;
+  border-radius: 2.5vh;
+  cursor: pointer;
+  text-align: center;  /* Ensure text is centered horizontally */
+  width: 15%;
+  max-width: 200px;
+  margin-top: 4vh;
+  display: flex;  /* Use flexbox for vertical alignment */
+  justify-content: center;  /* Center text horizontally */
+  align-items: center; 
+  
+}
+
+
+.btn-cancel {
+  background: #f5f5f5;
+  color: #333;
+  border: 0.2vh solid #ccc;
+  font-size: 2vh;
+}
+
+.btn-confirm {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 2vh;
+}
+
+.btn-confirm:hover {
+  background: #0056b3;
+}
+.btn-cancel:hover {
+  background: #d1d1d1;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 600px) {
+  .modal-container {
+    width: 95vw; /* Increase modal width for small screens */
+    max-width: 95vw;
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 2vh; /* Adjust spacing */
+  }
+
+  .btn-cancel, .btn-confirm {
+    flex: 1 1 100%; /* Buttons take full width */
+    padding: 1.2vh 0;
+    width: 100%;
+  }
+}
+
+
