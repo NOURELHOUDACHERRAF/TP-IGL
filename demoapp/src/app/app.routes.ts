@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LaborantinComponent } from './pages/laborantin/laborantin.component';
+import { InfermierComponent } from './pages/infermier/infermier.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
             {
                 path: 'laborantin', // Nouvelle route
                 component: LaborantinComponent
+            },
+            {
+                path: 'infermier', // Nouvelle route
+                component: InfermierComponent
             },
             {
                 path: 'dashboard',

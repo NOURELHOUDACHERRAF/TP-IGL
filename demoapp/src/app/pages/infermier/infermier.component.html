@@ -1,0 +1,56 @@
+<header>
+    <img src="assets/logoname.png" class="logoname-img" />
+</header>
+<div class="container">
+    
+
+    <div class="patients">
+        <!-- Barre de recherche -->
+        
+            <h2>Liste des patiens</h2>
+            <div class="search-bar">
+                <input type="text" [(ngModel)]="searchQuery" placeholder="Search" />
+                <!-- Icône QR Code -->
+                <div class="qr-icon" (click)="openScannerPopup()">
+                <i class="fas fa-qrcode"></i>
+                </div>
+            
+        </div>
+        <!-- Tableau des patients -->
+        <div class="table-container">
+            <table>
+                <tbody>
+                    <tr *ngFor="let bilan of filteredBilans; let i = index" (click)="onRowClick(bilan, i)">
+                        <td><strong>{{ bilan.nom }} {{ bilan.prenom }}</strong> </td>
+                        <td> {{ bilan.genre }}, {{ bilan.age }} ans</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Medicaments list-->
+     <div class="medoc-list">
+        <div class="head">
+            <h2>Traitement</h2>
+            <i class="fas fa-pills"></i>
+            <button>+ add</button>
+        </div>
+     </div>
+
+    <!-- Popup Overlay -->
+    <div *ngIf="showScanner" class="popup-overlay"></div>
+  
+    <!-- POP-UP pour Scanner -->
+    <div class="qr-popup" *ngIf="showScanner">
+        <div class="popup-content">
+            <span class="close" (click)="closeScannerPopup()">&times;</span>
+            <h3>Scanner le QR Code</h3>
+            <zxing-scanner 
+                [formats]="formats" 
+                (scanSuccess)="onCodeScanned($event)">
+            </zxing-scanner>
+        </div>
+    </div>
+    
+</div>
