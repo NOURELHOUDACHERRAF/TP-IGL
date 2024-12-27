@@ -1,0 +1,299 @@
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+ .logoname-img{
+  width: 12vw;
+  height: 7.5vh;
+  
+ }
+/* Popup principale */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  width: 60vw;
+  height: 70vh;
+  overflow-y: auto;
+}
+fieldset {
+  border: none; /* Supprime la bordure */
+  padding: 0;   /* Supprime le rembourrage intérieur */
+  margin: 0;    /* Supprime les marges extérieures */
+}
+
+/* Boutons */
+button {
+ 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+
+}
+
+
+
+/* Formulaire */
+input[type="text"] {
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+  border: none;
+  background-color: rgba(213, 213, 213, 0.5);
+  border-radius: 5px;
+}
+.test-row{
+  display: flex; /* Aligne les enfants sur la même ligne */
+  gap: 10px;
+}
+.labels{
+  display: flex; /* Aligne les enfants sur la même ligne */
+ 
+}
+h2{
+  font-weight: bolder;
+  font-family: "Almarai";
+  font-size: 1vw;
+ width: 40%;
+ margin-top: 1vw;
+ 
+}
+h1{
+  font-weight: bold;
+  font-family: "Almarai";
+  font-size: 1.5vw;
+  margin: 0.5vw;
+  margin-top: 0;
+}
+
+hr{
+  color: #ccc;
+  
+}
+
+.date-section {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  height: 2.5vw;
+}
+
+.date-section label {
+  font-weight: bolder;
+  font-family: "Almarai";
+  font-size: 1vw;
+  margin-top: 1vh;
+
+}
+
+.date-section input {
+  font-family: "Almarai";
+  font-size: 1vw;
+  border: none;
+  border-radius: 5px;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  width: 15vw;
+  background-color: rgba(213, 213, 213, 0.5);
+}
+
+button.add{
+  background-color: #4085F7;
+  color: white;
+  font-family: "almarai";
+  font-size: 1vw;
+  font-weight: bolder;
+  padding: 0.5vw ;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-left: 7vw;
+ 
+}
+/* Conteneur des boutons */
+.form-actions {
+  display: flex; /* Active Flexbox */
+  justify-content: flex-end; /* Aligne les éléments à droite */
+  gap: 10px; /* Espacement entre les boutons */
+  padding: 10px; /* Ajoute un espace autour des boutons */
+  bottom: 0; /* Aligné tout en bas */
+  position: relative;
+  right: 0; /* Aligné tout à droite */
+  width: auto; /* Ajustement automatique à la taille du contenu */
+  font-family: "almarai";
+}
+
+
+/* Bouton Annuler */
+button.annuler {
+  background-color: #f8f9fa;
+  color: black;
+  border: 2px solid #D5D5D5;
+  padding: 0.5vw 2vw;
+  border-radius: 3vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-weight: bolder;
+  font-family: "almarai";
+}
+
+button.annuler:hover {
+  background-color: #D5D5D5;
+  color: black;
+  border: 2px solid #D5D5D5;
+  padding: 0.5vw 2vw;
+  border-radius: 3vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-weight: bolder;
+  font-family: "almarai";
+}
+
+/* Bouton Confirmer */
+button.confirmer {
+  background-color: #4085F7;
+  color: white;
+  padding: 0.5vw 1.5vw;
+  border-radius: 3vw;
+
+  border: none;
+  cursor: pointer;
+  font-family: "Almarai";
+  font-size: 1vw;
+  font-weight: bolder;
+}
+
+/* Bouton Supprimer */
+.delete-btn {
+  background-color: transparent; /* Fond transparent */
+  color: #dc3545; /* Couleur rouge */
+  border: none; /* Pas de bordure */
+  cursor: pointer; /* Curseur pointer */
+  font-size: 1vw; /* Taille de l'icône */
+  transition: color 0.2s ease-in-out; /* Animation légère */
+}
+
+/* Effet au survol */
+.delete-btn:hover {
+  color: #c82333; /* Rouge plus foncé au survol */
+}
+
+.optional-section {
+  margin-top: 2vh;
+  justify-content: center;
+   font-family: "Almarai"
+}
+.optional-section label{
+  font-weight: bolder;
+  font-family: "Almarai";
+  font-size: 1vw;
+  margin-top: 1vh;
+}
+
+.optional-section textarea {
+  width: 95%;
+  font-family: "Almarai";
+  height: 10vh;
+  padding: 1vw;
+  margin-top: 1%;
+  font-size: 1vw;
+  border: 1px solid #D5D5D5;
+  border-radius: 5px;
+  resize: none;
+  background-color: rgba(213, 213, 213, 0.4);
+}
+
+
+.patient-info {
+ font-family: "Almarai";
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-card {
+  margin: 1vw;
+  width: 30vw;
+  height: 40vh;
+  text-align: start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1vw;
+ padding: 2vw;
+}
+
+.profile-card h2 {
+  text-align: center;
+  padding: 0%;
+  width: 100%;
+  font-size: 1.4vw;
+  color: #4085F7;
+  margin-bottom: 2vw;
+  
+}
+
+.details {
+  flex: 2;
+  padding: 20px;
+}
+
+.notification button{
+  background-color: #4085F7;
+  color: white;
+  width: 19vw;
+  height: 7vh;
+  font-family: "Almarai";
+  font-size: 1.2vw;
+  margin-left: 7vw;
+  margin-top: 5vh;
+}
+
+.bilansection{
+  background-color: rgba(213, 213, 213, 0.5);
+  text-align: start;
+  border-radius: 1vw;
+  margin-top: 2vh;
+  font-family: "Almarai";
+  padding: 2vh;
+}
+
+.entete h3{
+  color: #4085F7;
+  
+}
+
+.entete p{
+  font-size: 1.2vw;
+  font-weight: bolder;
+}
+
+.entete {
+ display: flex;
+ flex-direction: row;
+ gap: 23vw;
+ font-family: "Almarai";
+}
+
+.bilansection th {
+  color: #b4b4b4;
+  width: 17vw;
+}
+
+.bilansection table {
+  text-align: center;
+}
+
+
+
