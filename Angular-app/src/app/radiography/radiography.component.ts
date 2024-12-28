@@ -16,6 +16,8 @@ export class RadiographyComponent {
   
   
   @Input() typeRadiographie: string | null = null;
+  @Input() nDossier: number | null = null; // to send the infos to the dossier 
+
 
   compteRendu: string = '';
   selectedFiles: File[] = [];  // Array to store selected files
@@ -32,7 +34,7 @@ export class RadiographyComponent {
   }
 
   submitForm() {
-   
+    console.log('nDossier:', this.nDossier);
     console.log('Form Submitted');
     console.log('File Type:', this.fileType);
     console.log('Date:', this.date);

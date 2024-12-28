@@ -26,7 +26,7 @@
     </table>
 
     <div class="modal-overlay" *ngIf="showRadiographyModal"> <div class="modal-content">
-      <app-radiographie  [typeRadiographie]="selectedRadio?.typeRadiographie ?? null"  (close)="closeRadiographyModal()"></app-radiographie>
+      <app-radiographie  [typeRadiographie]="selectedRadio?.typeRadiographie ?? null"  [nDossier]="selectedRadio?.nDossier ?? null" (close)="closeRadiographyModal()"></app-radiographie>
     </div>
   </div>
 </div>
