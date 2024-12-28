@@ -33,7 +33,7 @@
     z-index: 10; /* Ensure it appears above the table */
   }
   
-  /* Table styling */
+  
   .modern-table {
     width: 100%;
     border-collapse: separate;
@@ -42,21 +42,21 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    position: relative; /* Keep the table within the flow */
-    z-index: 1; /* Ensure the table is below the resumer overlay */
+    position: relative; 
+    z-index: 1; 
   }
   
-  /* Header styling */
+
   .modern-table thead th {
     color: #000;
     padding: 12px;
     text-align: center;
     font-size: 16px;
-    text-transform: uppercase;
+    
     border: none;
   }
   
-  /* Row styling */
+ 
   .modern-table tbody tr {
     background-color: white;
     transition: background-color 0.3s ease;
@@ -70,12 +70,31 @@
     background-color: #D5D5D5;
   }
   
-  /* Cell styling */
+
   .modern-table td {
     padding: 12px;
     text-align: center;
     font-size: 14px;
     border: 1px solid #ddd;
+  }
+
+/*
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  */
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  table tbody tr:hover {
+    background-color: #D5D5D5;
   }
   
   /* Button styling */

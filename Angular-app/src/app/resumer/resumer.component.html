@@ -67,6 +67,13 @@
             (confirm)="onantecedentConfirm($event)"
           ></app-antecedent>
         </div>
+
+        <div *ngIf="modalType === 'ordonnance'">
+          <app-ordonnance
+            (cancel)="onCancelordonnance()"
+            (confirm)="onordonnanceConfirm($event)"
+          ></app-ordonnance>
+        </div>
       </div>
     </div>
   

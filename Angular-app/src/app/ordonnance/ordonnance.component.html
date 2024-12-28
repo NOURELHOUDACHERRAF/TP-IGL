@@ -1,0 +1,45 @@
+<div class="overlay">
+<div class="container">
+    <!-- Header Section -->
+    <div class="header">
+     
+        <h1>Ordonnance</h1>
+        
+
+     
+    </div>
+  
+    <!-- Form Section -->
+    <form>
+      <div class="form-row" *ngFor="let row of rows; let i = index">
+        <input
+          type="text"
+          placeholder="Médicament"
+          [(ngModel)]="row.medecament"
+          name="medecament-{{ i }}"
+        />
+        <input
+          type="text"
+          placeholder="Dose"
+          [(ngModel)]="row.dose"
+          name="dose-{{ i }}"
+        />
+        <input
+          type="text"
+          placeholder="Durée"
+          [(ngModel)]="row.duree"
+          name="duree-{{ i }}"
+        />
+      </div>
+      <button type="button" class="add-row-btn" (click)="addRow()">+</button>
+    </form>
+  
+    <div class="actions">
+        <button class="btn-cancel" (click)="onCancel()">Annuler</button>
+        <button class="btn-confirm" (click)="onConfirm()">Confirmer</button>
+      </div>
+    
+  </div>
+
+</div>
+  
