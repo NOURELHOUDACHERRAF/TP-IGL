@@ -1,0 +1,31 @@
+/* Style for the search bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Style for the results list */
+  .results {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .results ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .results li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
