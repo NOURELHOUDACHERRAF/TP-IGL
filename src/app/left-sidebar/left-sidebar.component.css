@@ -109,3 +109,11 @@ nav_link {
 .nav_icon {
   font-size: 1.25rem;
 }
+
+.nav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+}
