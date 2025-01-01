@@ -266,7 +266,7 @@ h2 {
 .medoc-list{
     width: 100%;
     font-family: "Almarai";
-    height: 30vh;
+    height: 35%;
     background-color: #EFEFEF;
     border-radius: 1vw;
 }
@@ -344,7 +344,7 @@ h2 {
 .hist-soins{
     width: 100%;
     font-family: "Almarai";
-    height: 30vh;
+    height: 35%;
     background-color: #EFEFEF;
     border-radius: 1vw;
 }
@@ -368,7 +368,7 @@ h2 {
 
 .hist-table{
    
-    max-height: 84%; /* Hauteur maximale définie (modifiable) */
+    max-height: 80%; /* Hauteur maximale définie (modifiable) */
     overflow-y: auto; /* Activation du défilement vertical */
     overflow-x: auto; /* Activation du défilement horizontal si nécessaire */
 }
@@ -400,8 +400,9 @@ h2 {
     color: white;
     padding: 0.5vw 0.5vw;
     border-radius: 1vw;
-    margin-left: 30%;
-    width: 40%;
+    margin-left: 25%;
+    margin-top: 15%;
+    width: 50%;
     border: none;
     cursor: pointer;
     font-family: "Almarai";
@@ -409,5 +410,30 @@ h2 {
     font-weight: bolder;
   }
 
-
+  .patient-info {
+    font-family: "Almarai";
+     display: flex;
+     flex-direction: column;
+     width: 35%;
+   }
+   
+   .profile-card {
+     margin: 1vw;
+        margin-top: 0;
+     height: 50%;
+     text-align: start;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+     border-radius: 1vw;
+    padding: 1vw;
+   }
+   
+   .profile-card h2 {
+     text-align: center;
+     padding: 0%;
+     width: 100%;
+     font-size: 1.4vw;
+     color: #4085F7;
+     margin-bottom: 2vw;
+     
+   }
 

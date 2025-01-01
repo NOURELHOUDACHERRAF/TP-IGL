@@ -85,12 +85,26 @@
         
      </div>
 
-     <!-- Bouton pour ouvrir la popup -->
-    
-      <button class="notification" (click)="afficherPopup()">+ Nouveau soin</button>
-    
+    </div>
+
+    <!-- Profil patient -->
+   <div class="patient-info">
+    <div class="profile-card">
+      <!-- <img src="profile.jpg" alt="Samir Bayou" class="profile-img" />   -->
+      <h2>Informations sur le patient</h2>
+      <p><strong>Nom :</strong>Samir</p>
+      <p><strong>Prénom :</strong>Bayou</p>
+      <p><strong>Age :</strong>42 ans</p>
+      <p><strong>Genre :</strong> Homme</p>
+      <p><strong>Groupe sanguin :</strong> O+</p>
+      <p><strong>Maladies chroniques :</strong> O+</p>
+      <p><strong>Medecin :</strong> O+</p>
     </div>
    
+     <!-- Bouton pour ouvrir la popup -->
+     <button class="notification" (click)="afficherPopup()">+ Nouveau soin</button>
+    
+  </div>
      <!-- Overlay et Popup -->
   <div *ngIf="popupVisible" class="popup-overlay"></div>
   <div *ngIf="popupVisible" class="popup">
