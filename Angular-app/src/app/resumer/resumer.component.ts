@@ -5,6 +5,9 @@ import { BilanBiologiqueComponent } from '../bilan-biologique/bilan-biologique.c
 import { BilanRadiologiqueComponent } from '../bilan-radiologique/bilan-radiologique.component';
 import { AntecedentComponent } from '../antecedent/antecedent.component';
 import { OrdonnanceComponent } from '../ordonnance/ordonnance.component';
+
+
+
 interface BilanRadiologiqueData {
   type: string;
 }
@@ -95,13 +98,13 @@ export class ResumerComponent {
     this.closeModal(); // Ferme la modale
     console.log('ordonnace annulé.');
   }
-  onordonnanceConfirm(data: OrdonnaceData[]) {
-    this.ordonnanceData = data; // Enregistrer les données
   
-    console.log('ordonnace confirmé:', data);
+  onordonnanceConfirm(data: { rows: OrdonnaceData[] }) {
+    this.ordonnanceData = data.rows; // Directly assign the rows to ordonnanceData
+    
+    console.log('ordonnace confirmé:', this.ordonnanceData);
     this.closeModal(); // Fermer la modale après confirmation
   }
-
  
   /*onCancel() {
     this.closeModal(); // Ferme la modale ou réinitialise les états si nécessaire

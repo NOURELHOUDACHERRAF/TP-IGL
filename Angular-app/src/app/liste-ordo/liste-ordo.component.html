@@ -3,7 +3,7 @@
     <div class="head">
      
 
-      <h2>Liste des radios</h2>
+      <h2>Liste des ordonnaces</h2>
       <div class="search-bar">
         <input type="text"  [(ngModel)]="searchQuery" placeholder="Search" />
         <div class="qr-icon" (click)="openScannerPopup()">
@@ -15,32 +15,46 @@
     <table>
       <thead>
         <tr>
-          <th>NSS</th>
-          <th>Nom patient</th>
-          <th>Médecin</th>
+          <th>Ordonnance</th>
+         
           <th>Date</th>
-          <th>Type Radiographie</th>
-          <th></th>
+          <th>Médecin</th>
+         
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let radio of radios">
-          <td>{{ radio.nDossier }}</td>
-          <td>{{ radio.nom }}</td>
-          <td>{{ radio.medecin }}</td>
-          <td>{{ radio.date }}</td>
-          <td>{{ radio.typeRadiographie }}</td>
-          <td><button (click)="openRadiographyModal(radio)">Ajouter</button></td>
-         </tr>
+        <tr *ngFor="let ordonnace of filteredOrdo" (click)="showDetails(ordonnace)">
+           
+            <td>{{ ordonnace.ordo }}</td>
+            <td>{{ ordonnace .date }}</td>
+            <td>{{ ordonnace.medecin }}</td>
+           
+           
+        </tr>
 
         
       </tbody>
     </table>
 
-    <div class="modal-overlay" *ngIf="showRadiographyModal"> <div class="modal-content">
-      <app-radiographie  [typeRadiographie]="selectedRadio?.typeRadiographie ?? null"  [nDossier]="selectedRadio?.nDossier ?? null" (close)="closeRadiographyModal()"></app-radiographie>
+    <!-- Détails de l'ordonnance -->
+<div *ngIf="selectedOrdo" class="overlay-container">
+    <div class="details-panel">
+        <button class="close-button " (click)="closeDetails()">X</button> 
+    <h3>Détails de l'Ordonnance</h3>
+  
+    <!-- Exemple de détails des médicaments -->
+    <div *ngFor="let row of selectedOrdo.details" class="details-row">
+        <span><strong>Médicament:  </strong> {{ row.medecament }}</span>
+        <span><strong>Dosage:</strong> {{ row.dose }}</span>
+        <span><strong>Durée:</strong> {{ row.duree }}</span>
     </div>
-  </div>
+
+    </div>
+  
+   
+
+  
+ 
 </div>
 
 
