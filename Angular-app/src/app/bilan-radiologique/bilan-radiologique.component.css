@@ -17,7 +17,7 @@
 .modal-container {
   background: #fff;
   padding: 5vh; /* Use viewport height for padding */
-  border-radius: 2vh; /* Make border-radius responsive */
+  border-radius: 15px; /* Make border-radius responsive */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 40vw; /* Responsive width */
   
@@ -30,10 +30,11 @@
 h3 {
   text-align: left;
   margin-bottom: 3vh; /* Adjust spacing with viewport height */
-  border-bottom: 0.4vh solid #D5D5D5; /* Responsive underline */
+  border-bottom: 0.3vh solid #D5D5D5; /* Responsive underline */
   padding-bottom: 3vh;
   font-size: 3.7vh; /* Responsive font size */
   font-weight: bold;
+  font-family: "Almarai";
 }
 
 
@@ -61,6 +62,7 @@ label {
   margin-bottom: 1vh;
   font-size: 2.5vh; /* Responsive font size */
   font-weight: bold;
+  font-family: "Almarai";
 }
 
 .form-input, .form-select {
@@ -89,7 +91,7 @@ label {
 
   padding: 1.5vh 3vw; /* Responsive padding */
   font-size: 2vh;
-  border-radius: 2.5vh;
+  border-radius: 30px;
   cursor: pointer;
   text-align: center;  /* Ensure text is centered horizontally */
   width: 15%;
@@ -105,12 +107,12 @@ label {
 .btn-cancel {
   background: #f5f5f5;
   color: #333;
-  border: 0.2vh solid #ccc;
+  border: 0.4vh solid #ccc;
   font-size: 2vh;
 }
 
 .btn-confirm {
-  background: #007bff;
+  background:#3A8EF6;
   color: #fff;
   border: none;
   font-size: 2vh;

@@ -1,6 +1,14 @@
 <div class="container">
     <!-- Conditionally display the ResumerComponent exactly on top of the table -->
+     
     <app-resumer *ngIf="showResumer" class="resumer-overlay"></app-resumer>
+     <!-- Barre de recherche -->
+     <div class="head">
+     
+
+      <h2>Liste des consultations</h2>
+      
+     </div>
   
     <table class="modern-table" >
       <thead>
@@ -33,7 +41,7 @@
     [consultation]="selectedConsultation" [displayType]="selectedDisplayType" (close)="closeDetails()">
   </app-consultation-details>
   
-    <!-- Button to show or hide the ResumerComponent -->
+  
     <button class="add-button" (click)="toggleResumer()">Ajouter consultation</button>
     <div *ngIf="showResumer" >
    <app-resumer 
@@ -62,5 +70,9 @@
       <p>{{ selectedConsultation?.bilanBiologiqueData }}</p>
     </div>
   </div> -->
+
+
+ 
+ 
   </div>
   

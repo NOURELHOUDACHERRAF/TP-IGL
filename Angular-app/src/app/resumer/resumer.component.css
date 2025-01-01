@@ -1,3 +1,4 @@
+
 .resumer-overlay {
   position: fixed;
   top: 0;
@@ -25,7 +26,7 @@
     margin-left: 15%; 
     margin-right: 10%; 
     /*border: 0.2vh solid #ccc; */
-    border-radius: 1vh; 
+    border-radius: 15px; 
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
     overflow-y: auto;
@@ -42,6 +43,7 @@
     border-radius: 1vh; 
     padding: 2vh; 
     font-size: 3vh; 
+    
   }
   .diagnostique-box{
     width: 80%; 
@@ -51,54 +53,22 @@
     border-radius: 1vh; 
     padding: 2vh; 
     font-size: 3vh; 
+    
 
   }
   
   h1, h3 {
     text-align: left;
     margin-bottom: 2vh; 
-    border-bottom: 0.4vh solid #D5D5D5; 
+    border-bottom: 0.3vh solid #D5D5D5; 
     padding-bottom: 2vh;
     font-size: 3.7vh; 
     font-weight: bold;
     width: 100%;
+    font-family: "Almarai";
   }
-  /*.form-row {
-    display: flex;
-    justify-content: flex-end;
-    width: 53vw;  
-    margin-bottom: 2vh;  
-    
-  }
-  
-  .form-group {
-    
-    flex: 1;
-    margin-right: 2vw;
-  
-  
-  }
-  
-  
 
 
-  
-  label {
-    align-items: center;
-    margin-right: 1.5vw;  
-    font-weight: bold;
-    color: #444;
-    font-size: 2.5vh; 
-  }
-  
-  input {
-    flex: 1;
-    padding: 2vh 2vw; 
-    border: 1px solid #ccc;
-    border-radius: 1vh;  
-    font-size: 2.5vh;  
-    
-  }*/
 /* Adjust the container for the whole form */
 .form-row {
   display: flex;
@@ -115,6 +85,7 @@
   flex: 1;
   margin-right: 2vw;
   width: 45%;  /* Adjust width to match description box */
+  
 }
 
 /* For Medcin group */
@@ -127,37 +98,14 @@
 }
 
   
-  /*.form-row {
-    display: flex;
-    flex-direction: row; 
-    justify-content: flex-start;
-    width: 43vw;  
-    margin-bottom: 2vh;  
-  }
-  
-  .form-group1 {
-    display: flex;
-    flex-direction: column; 
-    flex: 1;
-    margin-right: 2vw; 
-    width: 45%;
-   
-  }
-  .form-group2 {
-    display: flex;
-    flex-direction: column;  
-    flex: 1;
-   
-    width: 45%;
-    margin-left: 4vw;
-  }*/
   
   label {
     align-items: center;
     margin-bottom: 0.5vh; /* Space between label and input */
     font-weight: bold;
-    color: #444;
+   
     font-size: 2.5vh;  /* Responsive font size */
+    font-family: "Almarai";
   }
   
   input {
@@ -227,12 +175,14 @@
     margin-top: 8vh;
     width: 100%; /* Ensures it stays within the container */
     box-sizing: border-box;
+    
 }
   
   .btn-cancel, .btn-confirm {
     padding: 2vh 4vw; 
-    font-size: 2vh; 
-    border-radius: 2.5vh; 
+    font-family: "Almarai";
+    font-size: 1vw;
+    border-radius: 30px; 
     cursor: pointer;
     text-align: center;
     width: 15%;
@@ -242,18 +192,20 @@
     display: flex;  /* Use flexbox for vertical alignment */
     justify-content: center;  /* Center text horizontally */
     align-items: center; 
+  
   }
   
   .btn-cancel {
     background: #f5f5f5;
     color: #333;
-    border: 0.2vh solid #ccc;
+    border: 0.4vh solid #ccc;
   }
   
   .btn-confirm {
-    background: #007bff;
+    background-color: #4085F7;
     color: #fff;
     border: none;
+    
   }
   
   .btn-confirm:hover {
@@ -264,7 +216,8 @@
     background: #d1d1d1;
   }
   input:focus, textarea:focus {
-    border-color: #0056b3; /* Change the border color */
+    /* Change the border color */
+    border: 0.3vh solid #0056b3;;
    /* Change the background color */
     outline: none; /* Remove the default outline */
   }
@@ -280,125 +233,6 @@
   }
 
 
-  /*.resumer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5vh;
-    width: 90%;
-    margin: auto;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .form-row {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  .form-group {
-    flex: 1;
-    margin-right: 15px;
-  }
-  
-  .form-group:last-child {
-    margin-right: 0;
-  }
-  
-  textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .add-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 20px 0;
-  }
-  
-  .btn-add {
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-add:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    position: relative;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .actions {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-  }
-  
-  .btn-cancel {
-    background: #f8f8f8;
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .btn-confirm {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .btn-cancel:hover {
-    background: #e0e0e0;
-  }
-  
-  .btn-confirm:hover {
-    background: #0056b3;
-  }*/
-  
+ 
   
   

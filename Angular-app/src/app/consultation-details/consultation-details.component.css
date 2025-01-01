@@ -1,12 +1,21 @@
 /* consultation-details.component.css */
 .consultation-details {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: auto;
+   
+
+
+    max-width: 900px;
+    width: 38vw; 
+   
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    font-family:  sans-serif;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    max-height: 100vh; 
   }
   
  

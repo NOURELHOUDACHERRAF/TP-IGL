@@ -1,56 +1,11 @@
-/*import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { ResumerComponent } from '../resumer/resumer.component';
 
-@Component({
-  selector: 'app-liste-consul',
-  templateUrl: './liste-consul.component.html',
-   imports: [CommonModule, FormsModule,ResumerComponent],
-  styleUrls: ['./liste-consul.component.css']
-})
-
-export class ConsultationsComponent {
-  showResumer = false;
-  // Toggle the display of the resumer component
-  toggleResumer() {
-    this.showResumer = !this.showResumer;
-  }
-
-  consultationData: { date:string, medecin:string,description:string,diagnostique:string, bilanRadiologiqueData:string, bilanBiologiqueData:string, antecedentData: string } | null = null;
-
-  onCancelResume() {
-    this.toggleResumer();
-    console.log('Resume annulé.');
-  }
-  onResumeConfirm(data: { date:string, medecin:string,description:string,diagnostique:string, bilanRadiologiqueData:string, bilanBiologiqueData:string, antecedentData: string}) {
-    this.consultationData = data; // Enregistrer les données
-    
-    console.log('Resume confirmé:', data);
-    this.toggleResumer(); // Fermer la modale après confirmation
-  }
-
-  consultations = [
-    {
-      date: '18/12/2024',
-      medecin: 'kjhgf bnv'
-    },
-    {
-      date: '20/12/2024',
-      medecin: 'Dr. Smith'
-    }
-  ];
-
-
-
-  
-}*/
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ResumerComponent } from '../resumer/resumer.component';
 import { RouterModule } from '@angular/router'; // Import RouterModule
 import { ConsultationDetailsComponent } from '../consultation-details/consultation-details.component'; 
+
 
 interface Consultation {
   date: string;
@@ -70,6 +25,8 @@ interface Consultation {
 })
 
 export class ConsultationsComponent {
+ 
+
   showResumer = false;
   selectedDisplayType: string = 'all'; 
   selectedConsultation: Consultation | null = null; // Correctly declared
@@ -165,7 +122,5 @@ export class ConsultationsComponent {
   }
 
 
-
-  
 }
 

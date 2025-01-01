@@ -4,12 +4,7 @@
      
 
       <h2>Liste des antecedents</h2>
-      <div class="search-bar">
-        <input type="text"  [(ngModel)]="searchQuery" placeholder="Search" />
-        <div class="qr-icon" (click)="openScannerPopup()">
-          <i class="fas fa-qrcode"></i>
-      </div>
-    </div>
+      
   </div>
   <div class="table-wrapper">
     <table>
@@ -23,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let antecedent of filteredAntc">
+        <tr *ngFor="let antecedent of Antecedents">
            
             <td>{{ antecedent.nom }}</td>
             <td>{{ antecedent.type }}</td>
@@ -41,20 +36,8 @@
 </div>
 
 
-  <!-- Popup Overlay -->
-  <div *ngIf="showScanner" class="popup-overlay"></div>
   
-  <!-- POP-UP pour Scanner -->
-  <div class="qr-popup" *ngIf="showScanner">
-      <div class="popup-content">
-          <span class="close" (click)="closeScannerPopup()">&times;</span>
-          <h3>Scanner le QR Code</h3>
-          <zxing-scanner 
-              [formats]="formats" 
-              (scanSuccess)="onCodeScanned($event)">
-          </zxing-scanner>
-      </div>
-  </div>
+  
 
 
   </div>
