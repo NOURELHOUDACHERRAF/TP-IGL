@@ -1,0 +1,103 @@
+<div class="container">
+  <header>
+    <img src="assets/logoname.png"  class="logoname-img" />
+  </header>
+
+  <!-- Overlay et Popup -->
+  <div *ngIf="popupVisible" class="popup-overlay"></div>
+  <div *ngIf="popupVisible" class="popup">
+    <h1>Ajouter un bilan</h1>
+    <hr/>
+    <form [formGroup]="bilanForm" (ngSubmit)="onSubmit()">
+      <!-- Champ pour la date -->
+      <div class="date-section">
+       <label for="dateBilan">Date du Bilan :</label>
+       <input id="dateBilan" type="date" formControlName="dateBilan" required>
+       <button type="button" (click)="ajouterTest()" class="add">Ajouter un test</button>
+      </div>
+      <!-- Résultats du Bilan -->
+      <fieldset>
+        <div formArrayName="tests" class="tests">
+       
+          <div class="labels">
+            <h2>Test</h2>
+            <h2>Résultat</h2>
+            <h2>Valeur de référence</h2>
+          </div>
+          <!-- Formulaire d'ajout -->
+          <div *ngFor="let test of tests.controls; let i = index" [formGroupName]="i" class="test-row">
+            <input type="text" formControlName="nomTest" placeholder="Test" required>
+            <input type="text" formControlName="resultat" placeholder="Résultat" required>
+            <input type="text" formControlName="norme" placeholder="Valeur de référence" required>
+            <button type="button" (click)="supprimerTest(i)" class="delete-btn">
+              <i class="fas fa-trash-alt"></i> <!-- Icône de corbeille -->
+            </button>
+          </div>
+        </div>
+      </fieldset>
+      <!-- Champ textarea facultatif -->
+      <div class="optional-section">
+        <label for="remarques">Remarques supplémentaires :</label>
+        <textarea id="remarques" formControlName="remarques" placeholder="Ajoutez des remarques ici..."></textarea>
+      </div>
+      <!-- Boutons -->
+      <div class="form-actions">
+        <button type="button" (click)="fermerPopup()" class="annuler">Annuler</button>
+        <button type="submit" [disabled]="bilanForm.invalid" class="confirmer">Confirmer</button>
+      </div>
+    </form>
+  </div>
+
+  
+   <!-- Profil patient -->
+   <div class="patient-info">
+    <div class="profile-card">
+      <!-- <img src="profile.jpg" alt="Samir Bayou" class="profile-img" />   -->
+      <h2>Informations sur le patient</h2>
+      <p><strong>Nom :</strong>Samir</p>
+      <p><strong>Prénom :</strong>Bayou</p>
+      <p><strong>Age :</strong>42 ans</p>
+      <p><strong>Genre :</strong> Homme</p>
+      <p><strong>Groupe sanguin :</strong> O+</p>
+    </div>
+    <div class="details">
+      <p><strong>Bilan à faire :</strong> Glycémie</p>
+      <p><strong>Medecin :</strong> Dr.MEZIANE Celia</p>
+      <div class="bilansection"  *ngIf="showBilan">
+        <div class="entete">
+          <h3>Bilan d'analyses biologique</h3>
+        <p>Date : {{ bilanForm.get('dateBilan')?.value }}</p>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Test</th>
+              <th>Résultat</th>
+              <th>Valeur de Référence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let test of tests.controls; let i = index">
+              <td>{{ test.value.nomTest }}</td>
+              <td>{{ test.value.resultat }}</td>
+              <td>{{ test.value.norme }}</td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Bouton pour ouvrir la popup -->
+    <div class="notification">
+      <button (click)="afficherPopup()">Reporter les resultats d'analyses</button>
+    </div>
+
+    <div class="notification">
+      <button (click)="afficherPopup()">Générer un graphique de tendance</button>
+    </div>
+
+
+</div>

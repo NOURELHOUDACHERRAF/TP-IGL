@@ -1,0 +1,30 @@
+<div class="antecedent-overlay">
+  <div class="modal-container">
+    <h3>Ajouter un antécédent</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input
+          type="text"
+          id="nom"
+          placeholder="Nom"
+          [(ngModel)]="nom"
+          class="form-input"
+        />
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type" [(ngModel)]="selectedType" class="form-select">
+          <option *ngFor="let type of types" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+        
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn-cancel" (click)="onCancel()">Annuler</button>
+      <button class="btn-confirm" (click)="onConfirm()">Confirmer</button>
+    </div>
+  </div>
+</div>

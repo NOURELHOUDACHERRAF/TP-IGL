@@ -1,0 +1,21 @@
+<div class="consultation-details" *ngIf="consultation">
+  
+    <button class="close-button" (click)="onClose()">X</button> 
+    <div *ngIf="displayType === 'resume'">
+      <h3>Résumé</h3>
+      <p *ngIf="consultation?.description">Description: {{ consultation.description }}</p>
+      <p *ngIf="consultation?.diagnostique">Diagnostic: {{ consultation.diagnostique }}</p>
+    </div>
+  
+    <div *ngIf="displayType === 'radiologique'">
+      <h3>Examen Radiologique</h3>
+      <p *ngIf="consultation?.bilanRadiologiqueData">Bilan Radiologique: {{ consultation.bilanRadiologiqueData }}</p>
+    </div>
+  
+    <div *ngIf="displayType === 'biologique'">
+      <h3>Examen Biologique</h3>
+      <p *ngIf="consultation?.bilanBiologiqueData">Bilan Biologique: {{ consultation.bilanBiologiqueData }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!consultation">No consultation details available.</div>

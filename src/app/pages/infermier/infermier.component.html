@@ -1,0 +1,153 @@
+<header>
+    <img src="assets/logoname.png" class="logoname-img" />
+</header>
+<div class="container">
+    
+
+    <div class="patients">
+        <!-- Barre de recherche -->
+        
+            <h2>Liste des patiens</h2>
+            <div class="search-bar">
+                <input type="text" [(ngModel)]="searchQuery" placeholder="Search" />
+                <!-- Icône QR Code -->
+                <div class="qr-icon" (click)="openScannerPopup()">
+                <i class="fas fa-qrcode"></i>
+                </div>
+            
+        </div>
+        <!-- Tableau des patients -->
+        <div class="table-container">
+            <table>
+                <tbody>
+                    <tr *ngFor="let bilan of filteredBilans; let i = index" (click)="onRowClick(bilan, i)">
+                        <td><strong>{{ bilan.nom }} {{ bilan.prenom }}</strong> </td>
+                        <td> {{ bilan.genre }}, {{ bilan.age }} ans</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mid">
+         <!-- Medicaments list-->
+     <div class="medoc-list">
+        <div class="head">
+            <h2>Traitement</h2>
+            <i class="fas fa-pills"></i>
+           
+        </div>
+        <div class="traitement-table">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Médicament</th>
+                    <th>Dose</th>
+                    <th>Durée</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let treatment of treatments">
+                    <td>{{treatment.medicament}}</td>
+                    <td>{{treatment.dose}}</td>
+                    <td> {{treatment.duree}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+     </div>
+
+      <!-- Historique des soins-->
+      <div class="hist-soins">
+        <div class="head">
+            <h2>Historique des soins</h2>
+            <i class="fas fa-history"></i>
+        </div>
+        <div class="hist-table">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Heure</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let soin of soins">
+                    <td>{{soin.description}}</td>
+                    <td>{{soin.heure}}</td>
+                    <td>{{soin.date}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+     </div>
+
+    </div>
+
+    <!-- Profil patient -->
+   <div class="patient-info">
+    <div class="profile-card">
+      <!-- <img src="profile.jpg" alt="Samir Bayou" class="profile-img" />   -->
+      <h2>Informations sur le patient</h2>
+      <p><strong>Nom :</strong>Samir</p>
+      <p><strong>Prénom :</strong>Bayou</p>
+      <p><strong>Age :</strong>42 ans</p>
+      <p><strong>Genre :</strong> Homme</p>
+      <p><strong>Groupe sanguin :</strong> O+</p>
+      <p><strong>Maladies chroniques :</strong> O+</p>
+      <p><strong>Medecin :</strong> O+</p>
+    </div>
+   
+     <!-- Bouton pour ouvrir la popup -->
+     <button class="notification" (click)="afficherPopup()">+ Nouveau soin</button>
+    
+  </div>
+     <!-- Overlay et Popup -->
+  <div *ngIf="popupVisible" class="popup-overlay"></div>
+  <div *ngIf="popupVisible" class="popup">
+    <h1>Ajouter un soin</h1>
+    <hr/>
+    <form [formGroup]="soinForm" (ngSubmit)="onSubmit()">
+      <!-- Champ pour la date -->
+      <div class="date-section">
+       <label for="dateBilan">Date du soin :</label>
+       <input id="dateSoin" type="date" formControlName="dateSoin" required>
+      </div>
+      <!-- Champ pour l'heure  -->
+      <div class="date-section">
+        <label for="heureBilan">Heure du soin :</label>
+        <input id="heureSoin" type="time" formControlName="heureSoin" required>
+       </div>
+   
+      <!-- Description du soin -->
+      <div class="description-soin">
+        <label for="description">Description du soin :</label>
+        <textarea id="description" formControlName="description" placeholder="Ajoutez le soin ici..."></textarea>
+      </div>
+      <!-- Boutons -->
+      <div class="form-actions">
+        <button type="button" (click)="fermerPopup()" class="annuler">Annuler</button>
+        <button type="submit" [disabled]="soinForm.invalid" class="confirmer">Confirmer</button>
+      </div>
+    </form>
+  </div>
+
+    <!-- Popup Overlay -->
+    <div *ngIf="showScanner" class="popup-overlay"></div>
+  
+    <!-- POP-UP pour Scanner -->
+    <div class="qr-popup" *ngIf="showScanner">
+        <div class="popup-content">
+            <span class="close" (click)="closeScannerPopup()">&times;</span>
+            <h3>Scanner le QR Code</h3>
+            <zxing-scanner 
+                [formats]="formats" 
+                (scanSuccess)="onCodeScanned($event)">
+            </zxing-scanner>
+        </div>
+    </div>
+    
+</div>

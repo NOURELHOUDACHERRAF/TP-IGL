@@ -1,0 +1,27 @@
+
+
+  <div class="upload-radio">
+  
+  <div class="upload-container">
+    <label for="fileInput" class="upload-btn">
+      <span>📎 Ajouter un fichier</span>
+    </label>
+    <input
+      id="fileInput"
+      type="file"
+      (change)="onFileChange($event)"
+      hidden
+      multiple  
+    />
+  </div>
+
+
+  <div *ngIf="selectedFiles.length > 0" >
+    <ul>
+      <li *ngFor="let file of selectedFiles" class="file-display">📄 {{ file.name }}</li>
+    </ul>
+  </div> 
+</div> 
+
+
+

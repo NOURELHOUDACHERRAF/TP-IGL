@@ -1,0 +1,68 @@
+<div class="scrollable-container"> 
+<div class="radiographie-form">
+  <button class="close-button " (click)="closeModal()">X</button> 
+  <h3 class="form-title">Les informations de Radiographie</h3>
+  
+<!-- When the property in the component changes, the input field's value is updated automatically in the UI. -->
+  
+  <!-- <div class="form-group">
+    <label for="typeRadiographie">Type de Radiographie</label>
+    <input
+      type="text"
+      id="typeRadiographie"
+      class="input-field"
+      [(ngModel)]="fileType"
+      placeholder=""
+    />
+  </div>-->
+  <div class="form-group">
+    <label for="typeRadiographie">Type de Radiographie</label>
+    <input
+    type="text"
+        id="typeRadiographie"
+        class="input-field"
+        [value]="typeRadiographie"
+        readonly
+  />
+    
+  </div>
+
+ 
+  <div class="form-group">
+    <label for="dateRadiographie">Date de Radiographie</label>
+    <input
+    type="date"
+      id="dateRadiographie"
+      class="input-field"
+      [(ngModel)]="date" 
+      placeholder="jj/mm/aaaa"
+    />
+  </div>
+
+  
+  <div class="form-group">
+    <label>Résultat de Radiographie</label>
+    <div>
+     
+      <textarea
+        class="compte-rendu-textarea"
+        placeholder="Écrire un compte rendu ici..."
+        [(ngModel)]="compteRendu"
+      ></textarea>
+
+    </div>
+      <app-upload-radio (fileSelected)="onFileChange($event)"></app-upload-radio>
+
+      
+      
+    
+  </div> 
+
+  
+  <div class="form-group btn-container">
+    <button class="btn-confirm" (click)="submitForm()">Confirmer</button>
+  </div>
+</div> 
+</div>
+
+  

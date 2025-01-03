@@ -1,0 +1,43 @@
+<div class="container">
+    <!-- Barre de recherche -->
+    <div class="head">
+     
+
+      <h2>Liste des antecedents</h2>
+      
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Antecedent</th>
+         
+          <th>Type</th>
+          <th>Médecin</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let antecedent of Antecedents">
+           
+            <td>{{ antecedent.nom }}</td>
+            <td>{{ antecedent.type }}</td>
+            <td>{{ antecedent.medecin }}</td>
+           
+           
+        </tr>
+
+        
+      </tbody>
+    </table>
+
+  
+ 
+</div>
+
+
+  
+  
+
+
+  </div>

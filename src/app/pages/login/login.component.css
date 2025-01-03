@@ -1,0 +1,134 @@
+/* Global styles */
+body {
+  font-family: "Almarai", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 95vw;
+}
+
+/* Wrapper */
+.login-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  overflow: hidden;
+  width: 100vw;
+  height: 95vh;
+
+}
+
+/* Form section */
+.login-form {
+
+  width: 40%;
+  height: 75%;
+  border-radius: 2vw;
+  margin-top: 6%;
+  margin-left: 10%;
+
+  align-items: center; /* Centre horizontalement */
+  box-shadow: 0 1vw 2vw rgba(61, 147, 255, 0.4);
+}
+
+.login-form h1 {
+  text-align: center;
+  font-family: "Almarai";
+  
+  font-size: 2vw;
+  color: black;
+}
+
+.form-group {
+  margin: 4%;
+}
+
+.form-group label {
+  font-weight: bolder;
+  font-family: "Almarai";
+  color: Black;
+  font-size: 1.2vw;
+}
+
+.form-group input {
+  width: 94%;
+  padding: 1vw;
+  border: 1px solid #ADADAD;
+  border-radius: 1.6vh;
+  font-size: 0.9rem;
+  font-family: "Almarai";
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #3D93FF;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 90%;
+  height: 25%;
+  margin-left: 1.5vw;
+  margin-top: 8%;
+ padding: 2vh;
+  background-color: #3D93FF;
+  color: white;
+  border: none;
+  border-radius: 1vw;
+  font-size: 1.1rem;
+  font-family: "Almarai";
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #4085F7;
+}
+
+.remember-me {
+  display: flex; /* Utiliser flexbox pour aligner les éléments en ligne */
+  align-items: center; /* Centrer verticalement */
+  justify-content: flex-start; /* Aligner à gauche */
+  width: 100%;
+  margin-top: 6%;
+  margin-left: 5%;
+}
+
+.remember-me input {
+  margin-right: 3%; /* Espace entre la case à cocher et le texte */
+  height: 1.5vw;
+  width: 1.5vw;
+}
+
+.remember-me label {
+  font-family: "Almarai";
+  color: black;
+  font-weight: bolder;
+  font-size: 1rem;
+} 
+
+/* Image section */
+.login-image {
+  width: 60%;
+  height: 85%;
+  display: flex;
+  justify-content: flex-end; /* Aligner l'image à l'extrême droite */
+
+  padding-right: 20px; /* Ajouter un espace entre l'image et le bord droit */
+  padding-top: 20px;
+}
+
+.login-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
