@@ -10,6 +10,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './main.component.css',
 })
 export class MainComponent {
+
+
+  //gestion de l'affichage de side bar
+
+  
   isLeftSidebarCollapsed = input.required<boolean>();
   screenWidth = input.required<number>();
   sizeClass = computed(() => {

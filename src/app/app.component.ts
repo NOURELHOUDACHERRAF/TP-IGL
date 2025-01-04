@@ -1,12 +1,12 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { MainComponent } from './main/main.component';
-import { FormComponent } from "./form/form.component";
-import { SearchComponent } from './search/search.component';
+
+import { AfficheComponent } from './affiche/affiche.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LeftSidebarComponent, MainComponent, FormComponent,SearchComponent],
+  imports: [AfficheComponent,MainComponent,LeftSidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
