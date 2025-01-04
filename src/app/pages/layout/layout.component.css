@@ -32,10 +32,16 @@
   .sidebar ul {
     list-style: none;
     padding: 0;
+    color: #ffffff;
   }
   
   .sidebar ul li {
     margin-bottom: 1rem;
+    color: #ffffff;  /* Default color for menu items */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+  .sidebar ul li:hover {
+    color:  #ffffff;  /* Change this to the color you want on hover */
   }
   
   .logout i {

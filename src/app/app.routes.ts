@@ -13,7 +13,9 @@ import { ListeOrdoComponent } from './pages/liste-ordo/liste-ordo.component';
 import { homeMedComponent} from './pages/homeMed/homeMed.component';
 import { FormComponent} from './pages/form/form.component';
 import { AjouteTraitementComponent} from './pages/ajoute-traitement/ajoute-traitement.component';
-
+import { homeAdminComponent} from './pages/homeAdmin/homeAdmin.component';
+import { FormAdminComponent } from './pages/formAdmin/form.component';
+import { homePatientComponent } from './pages/homePatient/homePatient.component';
 
 export const routes: Routes = [
     {
@@ -54,14 +56,8 @@ export const routes: Routes = [
                 path: 'antc',
                 component: ListeAntecedentComponent
             },
-            {
-                path: 'antc',
-                component: ListeAntecedentComponent
-            },
-            {
-                path: 'antc',
-                component: ListeAntecedentComponent
-            },
+           
+          
 
             {
                 path: 'consul',
@@ -78,6 +74,18 @@ export const routes: Routes = [
             {
                 path: 'trait',
                 component: AjouteTraitementComponent
+            },
+            {
+                path: 'homeAdmin',
+                component: homeAdminComponent
+            },
+            {
+                path: 'formeAdmin',
+                component:  FormAdminComponent
+            },
+            {
+                path: 'homePatient',
+                component: homePatientComponent
             }
         ]
     }

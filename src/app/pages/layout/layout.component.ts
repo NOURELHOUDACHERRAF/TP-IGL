@@ -17,26 +17,74 @@ export class LayoutComponent implements OnInit {
   menus: {
     [key: string]: { label: string; link: string }[]; // Index signature for dynamic keys
   } = {
-    dashboard: [
-      { label: 'Dash', link: '/dashboard' },
-      { label: 'Pro', link: '/pro' },
-      { label: 'Para', link: '/para' }
-    ],
-    radiologue: [
-      { label: 'Home', link: '/radiologue' },
-      { label: 'Liste', link: '/ordo' }
-    ],
-    default: [
-      { label: 'Home', link: '/' },
-      { label: 'About', link: '/about' }
-    ],
+   
+  
     homeMed:[
-      { label: 'Home', link: '/' },
-      { label: 'form', link: '/form' },
-      { label: 'Ajouter-Antecedent', link: '/antc' },
-      { label: 'Ajouter-bilan', link: '/bilan' },
-      { label: 'form', link: '/form' }
+   
+      { label: 'Home', link: '/form' },
+      { label: 'Antecedents', link: '/antc' },
+      { label: 'Prescription', link: '/ordo' },
+      { label: 'Consultation', link: '/consul' },
+      { label: 'Traitement', link: '/trait' }
+    ],
+    form:[
+    
+      { label: 'Home', link: '/form' },
+      { label: 'Antecedents', link: '/antc' },
+      { label: 'Prescription', link: '/ordo' },
+      { label: 'Consultation', link: '/consul' },
+      { label: 'Traitement', link: '/trait' }
+    ],
+    antc:[
+    
+      { label: 'Home', link: '/form' },
+      { label: 'Antecedents', link: '/antc' },
+      { label: 'Prescription', link: '/ordo' },
+      { label: 'Consultation', link: '/consul' },
+      { label: 'Traitement', link: '/trait' }
+    ],
+    ordo:[
+   
+      { label: 'Home', link: '/form' },
+      { label: 'Antecedents', link: '/antc' },
+      { label: 'Prescription', link: '/ordo' },
+      { label: 'Consultation', link: '/consul' },
+      { label: 'Traitement', link: '/trait' }
+    ],
+    consul:[
+     
+      { label: 'Home', link: '/form' },
+      { label: 'Antecedents', link: '/antc' },
+      { label: 'Prescription', link: '/ordo' },
+      { label: 'Consultation', link: '/consul' },
+      { label: 'Traitement', link: '/trait' }
+    ],
+    trait:[
+     
+      { label: 'Home', link: '/form' },
+      { label: 'Antecedents', link: '/antc' },
+      { label: 'Prescription', link: '/ordo' },
+      { label: 'Consultation', link: '/consul' },
+      { label: 'Traitement', link: '/trait' }
+    ],
+    
+    homeAdmin:[
+     
+      { label: 'Home', link: '/homeAdmin' },
+      { label: 'Form', link: '/formeAdmin' },
+  
+    ],
+    formeAdmin:[
+     
+      { label: 'Home', link: '/homeAdmin' },
+      { label: 'Form', link: '/formeAdmin' },
+  
+    ],
+    homePatient:[
+      { label: 'Home', link: '/homePatient' },
     ]
+
+
   };
 
   constructor(private router: Router) {}

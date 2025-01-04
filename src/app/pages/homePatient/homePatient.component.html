@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="form-container">
+      <h1>Créer DPI</h1>
+      <form [formGroup]="dpiForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" formControlName="nom" placeholder="Nom">
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom">
+          </div>
+          <div class="form-group">
+            <label for="date-naissance">Date de naissance</label>
+            <input type="date" id="date-naissance" formControlName="dateNaissance">
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" formControlName="adresse" placeholder="Adresse">
+          </div>
+          <div class="form-group">
+            <label for="telephone">N° téléphone</label>
+            <input type="text" id="telephone" formControlName="telephone" placeholder="N° téléphone">
+          </div>
+          <div class="form-group">
+            <label for="sexe">Sexe</label>
+            <select id="sexe" formControlName="sexe">
+              <option value="M">M</option>
+              <option value="F">F</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="groupe-sanguin">Groupe sanguin</label>
+            <select id="groupe-sanguin" formControlName="groupeSanguin">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="medecins">Liste médecins traitants</label>
+            <select id="medecins" formControlName="medecins" multiple>
+              <option *ngFor="let medecin of medecins" [value]="medecin.id">
+                {{ medecin.name }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="urgence">Contact d'urgence</label>
+            <input type="text" id="urgence" formControlName="urgence" placeholder="Contact d'urgence">
+          </div>
+          <div class="form-group">
+            <label for="mutuelle">Mutuelle</label>
+            <input type="text" id="mutuelle" formControlName="mutuelle" placeholder="Mutuelle">
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

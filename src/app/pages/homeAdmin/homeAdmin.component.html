@@ -1,0 +1,37 @@
+<!--ce code est reserver pour le dashboard de l'administrative -->
+
+
+<div class="dashboard-container">
+  <!-- Affichage du formulaire en haut du dashboard -->
+  <div *ngIf="showForm" class="form-container">
+    <app-affiche></app-affiche>
+  </div>
+        <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>NSS</th>
+          <th>Date de Création</th>
+          <th>Date de Sortie</th>
+          <th>DPI</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!--remplissage des champs-->
+
+        
+        <tr *ngFor="let person of people">
+          <td>{{ person.nom }}</td>
+          <td>{{ person.prenom }}</td>
+          <td>{{ person.nss }}</td>
+          <td>{{ person.dateCreation }}</td>
+          <td>{{ person.dateSortie }}</td>
+          <td><button class="dpi-button" (click)="toggleForm()">Afficher DPI</button></td>
+      
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
