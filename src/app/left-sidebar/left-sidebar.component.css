@@ -95,7 +95,7 @@
   color: #000;
 }
 
-nav_link {
+.nav_link {
   position: relative;
   color: var(--first-color-light);
   margin-bottom: 1.5rem;

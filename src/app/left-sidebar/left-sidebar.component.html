@@ -1,43 +1,84 @@
-<div
-  class="sidenav"
-  [ngClass]="isLeftSidebarCollapsed() ? 'sidenav-collapsed' : ''"
->
+<div class="sidenav" [ngClass]="isLeftSidebarCollapsed() ? 'sidenav-collapsed' : ''">
   <div class="logo-container">
     <button class="logo" (click)="toggleCollapse()">
-      <i class="fal fa-bars"></i>
+      <i class="fal fa-bars" aria-hidden="true"></i>
     </button>
-    @if (!isLeftSidebarCollapsed()) {
-      <div class="logo-text">Medlink</div>
-      <button class="btn-close" (click)="closeSidenav()">
-        <i class="fal fa-times close-icon"></i>
-      </button>
-    }
-  </div>
-  <div class="sidenav-nav">
-    @for (item of items; track $index) {
-      <li class="sidenav-nav-item">
-        <a
-          class="sidenav-nav-link"
-          [routerLink]="item.routeLink"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <i class="sidenav-link-icon" [class]="item.icon"></i>
-          @if (!isLeftSidebarCollapsed()) {
-            <span class="sidenav-link-text">{{ item.label }}</span>
-          }
-        </a>
-      </li>
-    }
+    <div *ngIf="!isLeftSidebarCollapsed()" class="logo-text">Medlink</div>
+    <button *ngIf="!isLeftSidebarCollapsed()" class="btn-close" (click)="closeSidenav()">
+      <i class="fal fa-times close-icon"></i>
+    </button>
   </div>
 
-  <nav class="nav">
-    <a href="#" class="nav_link">
-        <i class='bx bx-log-out nav_icon'></i>
-        <span class="nav_name">SignOut</span>
-    </a>
-   
-  </nav>
+  <ul class="sidenav-nav">
+    <!-- Dashboard Link -->
+    <li class="sidenav-nav-item ">
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <div class="sidenav-nav-link">
+          <i class="sidenav-link-icon fal fa-home"></i> 
+          <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">Home</span>
+        </div>
+      </a>
+    </li>
+
+    <!-- Form Link -->
+    <li class="sidenav-nav-item">
+      <a routerLink="/form" routerLinkActive="active">
+        <div class="sidenav-nav-link">
+          <i class="sidenav-link-icon fal fa-file"></i>
+          <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">Form</span>
+        </div>
+      </a>
+    </li>
+
+
+
+   <!-- ajoute antécédent -->
+<li class="sidenav-nav-item">
+  <a routerLink="/ajoute-antecedent" routerLinkActive="active">
+    <div class="sidenav-nav-link">
+      <i class="sidenav-link-icon fal fa-plus"></i>
+      <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">Ajoute Antécédent</span>
+    </div>
+  </a>
+</li>
+
+<!-- ajoute traitement -->
+<li class="sidenav-nav-item">
+  <a routerLink="/ajoute-traitement" routerLinkActive="active">
+    <div class="sidenav-nav-link">
+      <i class="sidenav-link-icon fal fa-plus"></i>
+      <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">Ajoute Traitement</span>
+    </div>
+  </a>
+</li>
+
+<!-- ajoute prescription -->
+<li class="sidenav-nav-item">
+  <a routerLink="/ajoute-prescription" routerLinkActive="active">
+    <div class="sidenav-nav-link">
+      <i class="sidenav-link-icon fal fa-plus"></i>
+      <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">Ajoute Prescription</span>
+    </div>
+  </a>
+</li>
+
+<!-- ajoute consultation -->
+<li class="sidenav-nav-item">
+  <a routerLink="/ajoute-consultation" routerLinkActive="active">
+    <div class="sidenav-nav-link">
+      <i class="sidenav-link-icon fal fa-plus"></i>
+      <span *ngIf="!isLeftSidebarCollapsed()" class="sidenav-link-text">Ajoute Consultation</span>
+    </div>
+  </a>
+</li>
+
+
+
+
+  </ul>
 </div>
 
-
+<!-- Content area where components will be loaded -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
