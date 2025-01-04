@@ -1,31 +1,97 @@
-/* Style for the search bar */
+/* Style pour l'en-tête */
+header.header {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center;     /* Centrer verticalement */
+  height: 100px;           /* Hauteur de l'en-tête */
+  background-color: #f8f9fa; /* Couleur de fond de l'en-tête */
+  padding: 0 20px;         /* Ajouter des marges latérales */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre sous l'en-tête */
+}
+
+/* Style pour la barre de recherche */
 .search-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .search-bar {
-    padding: 10px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  /* Style for the results list */
-  .results {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .results ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .results li {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+}
+
+/* Style pour le bouton du scanner */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style pour la pop-up du scanner */
+.scanner-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scanner-popup button {
+  margin-top: 10px;
+  background-color: #dc3545;
+}
+
+.scanner-popup button:hover {
+  background-color: #c82333;
+}
+
+/* Style pour la liste des résultats */
+.results {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.results li {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.results li:hover {
+  background-color: #e9ecef;
+}

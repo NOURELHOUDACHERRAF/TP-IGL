@@ -1,0 +1,73 @@
+<!-- ce code est reserver pour l'ajout d'un medcin-->
+
+<!-- header of the page -->
+
+
+<header class="header" id="header">
+    <div class="header_toggle">
+      <i class='bx bx-menu' id="header-toggle"></i>
+    </div>
+    <div class="header_img">
+      <img src="https://i.imgur.com/hczKIze.jpg" alt="User Image">
+    </div>
+  </header>
+  
+
+<!--le form d'un medcin-->
+
+
+  <div class="main-content">
+    <div class="form-container">
+      <h1>Ajouter un médecin</h1>
+      <form [formGroup]="dpiForm" (ngSubmit)="onSubmit()">
+
+
+ <!--le nom de medcin-->
+
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" formControlName="nom" placeholder="Nom" class="form-control" [class.is-invalid]="isInvalid('nom')">
+            <div *ngIf="isInvalid('nom')" class="invalid-feedback" class="error-message">Nom est requis.</div>
+          </div>
+
+
+ <!--le prenom de medcin-->
+
+
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom" class="form-control" [class.is-invalid]="isInvalid('prenom')">
+            <div *ngIf="isInvalid('prenom')" class="invalid-feedback"  class="error-message">Prénom est requis.</div>
+          </div>
+
+
+<!--la specialiter -->
+
+
+          <div class="form-group">
+            <label for="specialite">Spécialité</label>
+            <select id="specialite" formControlName="specialite"  class="form-select" [class.is-invalid]="isInvalid('specialite')">
+              <option *ngFor="let specialite of specialites" [value]="specialite">{{ specialite }}</option>
+            </select>
+            <div *ngIf="isInvalid('specialite')" class="invalid-feedback"  class="error-message">Spécialité est requis.</div>
+          </div>
+        </div>
+        <div class="form-buttons">
+
+
+<!--annuler-->
+
+
+          <button type="button" class="btn btn-blue" (click)="onReset()"  class="button">Annuler</button>
+<!--confirmer-->
+
+
+          <button type="submit" class="btn btn-blue" class="button"  >Confirmer</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,22 +1,33 @@
-<div class="search-container">
-    <input 
-      type="text" 
-      [(ngModel)]="searchText" 
-      placeholder="Search by name, first name or NSS" 
-      class="search-bar" 
-    />
+<!--code resever pour la  bar de  recherche-->
+
+
+<header class="header">
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchText" placeholder="Rechercher par nom, prénom ou NSS" class="search-bar" />
+    <button (click)="openScannerPopup()">Scanner QR Code</button>
   </div>
-  
-  <div class="results" *ngIf="filteredPeople.length > 0">
-    <ul>
-      <li *ngFor="let person of filteredPeople">
-        {{ person.prenom }} {{ person.nom }} - NSS: {{ person.nss }}
-      </li>
-    </ul>
-  </div>
-  
-  <!-- Show a message if no results are found after typing -->
-  <div *ngIf="searchText && filteredPeople.length === 0">
-    <p>No results found</p>
-  </div>
-  
+</header>
+
+
+<!-- Affichage du scanner si showScanner est true -->
+
+
+<div *ngIf="showScanner" class="scanner-popup">
+  <zxing-scanner
+    [formats]="formats"
+    (scanSuccess)="onCodeScanned($event)">
+  </zxing-scanner>
+  <button (click)="closeScannerPopup()">Fermer le scanner</button>
+</div>
+
+
+<!-- Affichage des résultats filtrés -->
+
+
+<div class="results">
+  <ul>
+    <li *ngFor="let person of filteredPeople">
+      <p>{{ person.nom }} {{ person.prenom }} - NSS: {{ person.nss }}</p>
+    </li>
+  </ul>
+</div>

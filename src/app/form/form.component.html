@@ -1,9 +1,16 @@
+<!--ce code est reserver pour la creation de dpi-->
+
 
 <div class="main-content">
     <div class="form-container">
         <h1>Créer DPI</h1>
         <form [formGroup]="dpiForm" (ngSubmit)="onSubmit()">
             <div class="form-row">
+
+
+ <!--le nom-->
+
+
                 <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" formControlName="nom" placeholder="Nom">
@@ -12,12 +19,21 @@
                     </div>
                 </div>
                 <div class="form-group">
+
+ <!--le prenom-->
+
+
                     <label for="prenom">Prénom</label>
                     <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom">
                     <div *ngIf="isInvalid('prenom')" class="error-message">
                         Le prénom est requis.
                     </div>
                 </div>
+
+
+<!--date de naissance-->
+
+
                 <div class="form-group">
                     <label for="date-naissance">Date de naissance</label>
                     <input type="date" id="date-naissance" formControlName="dateNaissance">
@@ -27,6 +43,10 @@
                 </div>
             </div>
 
+
+ <!--adress-->
+
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="adresse">Adresse</label>
@@ -35,6 +55,11 @@
                         L'adresse est requise.
                     </div>
                 </div>
+
+
+ <!--numero telephone-->
+
+
                 <div class="form-group">
                     <label for="telephone">N° téléphone</label>
                     <input type="text" id="telephone" formControlName="telephone" placeholder="N° téléphone">
@@ -42,6 +67,11 @@
                         Le numéro de téléphone est requis et doit être valide.
                     </div>
                 </div>
+
+
+<!--sex-->
+
+
                 <div class="form-group">
                     <label for="sexe">Sexe</label>
                     <select id="sexe" formControlName="sexe">
@@ -52,6 +82,10 @@
                         Le sexe est requis.
                     </div>
                 </div>
+
+<!--group sanguin-->
+
+
                 <div class="form-group">
                     <label for="groupe-sanguin">Groupe sanguin</label>
                     <select id="groupe-sanguin" formControlName="groupeSanguin">
@@ -70,6 +104,10 @@
                 </div>
             </div>
 
+
+ <!--liste des medcin-->
+
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="medecins">Liste médecins traitants</label>
@@ -82,6 +120,11 @@
                         Veuillez sélectionner au moins un médecin.
                     </div>
                 </div>
+
+
+<!--contact urgence-->
+
+
                 <div class="form-group">
                     <label for="urgence">Contact d'urgence</label>
                     <input type="text" id="urgence" formControlName="urgence" placeholder="Contact d'urgence">
@@ -89,6 +132,11 @@
                         Le contact d'urgence est requis.
                     </div>
                 </div>
+
+
+ <!--mutuelle-->
+
+
                 <div class="form-group">
                     <label for="mutuelle">Mutuelle</label>
                     <input type="text" id="mutuelle" formControlName="mutuelle" placeholder="Mutuelle">
@@ -97,6 +145,11 @@
                     </div>
                 </div>
             </div>
+
+
+              
+<!--submition-->
+
 
             <button type="submit" class="btn btn-blue" class="button">Submit</button>
         </form>
