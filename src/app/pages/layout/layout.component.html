@@ -1,29 +1,28 @@
 <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <!-- Logo -->
-      <div class="logo">
-        <img src="assets/logo_white.png" alt="Logo">
-      </div>
-  
-      <!-- Menu -->
-      <nav class="menu">
-        <ul>
-          <li><a routerLink="/dashboard">Dash</a></li>
-          <li><a href="#">Pro</a></li>
-          <li><a href="#">Para</a></li>
-        </ul>
-      </nav>
-  
-      <!-- Bouton Déconnexion -->
-      <div class="logout">
-        <i class="fas fa-sign-out-alt" (click)="logout()"></i>
-      </div>
-    </aside>
-  
-    <!-- Contenu principal -->
-    <main class="main-content">
-      <router-outlet></router-outlet>
-    </main>
-  </div>
-  
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/logo_white.png" alt="Logo">
+    </div>
+
+    <!-- Dynamic Menu -->
+    <nav class="menu">
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a [routerLink]="item.link">{{ item.label }}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Logout Button -->
+    <div class="logout">
+      <i class="fas fa-sign-out-alt" (click)="logout()"></i>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

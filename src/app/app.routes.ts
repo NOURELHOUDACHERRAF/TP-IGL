@@ -10,6 +10,9 @@ import { ConsultationsComponent } from './pages/liste-consul/liste-consul.compon
 
 
 import { ListeOrdoComponent } from './pages/liste-ordo/liste-ordo.component';
+import { homeMedComponent} from './pages/homeMed/homeMed.component';
+import { FormComponent} from './pages/form/form.component';
+import { AjouteTraitementComponent} from './pages/ajoute-traitement/ajoute-traitement.component';
 
 
 export const routes: Routes = [
@@ -51,10 +54,30 @@ export const routes: Routes = [
                 path: 'antc',
                 component: ListeAntecedentComponent
             },
+            {
+                path: 'antc',
+                component: ListeAntecedentComponent
+            },
+            {
+                path: 'antc',
+                component: ListeAntecedentComponent
+            },
 
             {
                 path: 'consul',
                 component: ConsultationsComponent
+            },
+            {
+                path: 'homeMed',
+                component: homeMedComponent
+            },
+            {
+                path: 'form',
+                component:  FormComponent
+            },
+            {
+                path: 'trait',
+                component: AjouteTraitementComponent
             }
         ]
     }
