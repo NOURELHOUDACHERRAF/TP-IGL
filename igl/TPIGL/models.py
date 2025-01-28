@@ -20,7 +20,8 @@ class Patients(models.Model):
     contact = models.CharField(max_length=255)  # Personne à contacter en cas d'urgence
     mutuelle = models.CharField(max_length=255, null=True, blank=True)  # Mutuelle (optionnelle)
     sexe = models.CharField(max_length=10, choices=[('M', 'Masculin'), ('F', 'Féminin')], null=True, blank=True)
-    group_sanguin = models.CharField(max_length=3, choices=[('A+', 'A+'), ('A-', 'A-'),('B+', 'B+'), ('B-', 'B-'), ('AB+', 'AB+'), ('AB-', 'AB-'),  ('O+', 'O+'), ('O-', 'O-')], null=True, blank=True)
+    group_sanguin = models.CharField(max_length=3, choices=[('A+', 'A+'), ('A-', 'A-'),('B+', 'B+'), ('B-', 'B-'), ('AB+', 'AB+'), ('AB-', 'AB-'),  ('O+', 'O+'), ('O-', 'O-')], 
+                                     null=True, blank=True)
 
     class Meta:
         db_table = 'patients'  # Nom de la table dans la base de données MySQL
