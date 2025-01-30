@@ -1,0 +1,34 @@
+<h2>Consultation Details</h2>
+<p><strong>Patient:</strong> {{ consultation.patient }}</p>
+<p><strong>Médecin:</strong> {{ consultation.medecin }}</p>
+<p><strong>Date:</strong> {{ consultation.date }}</p>
+<p><strong>Description:</strong> {{ consultation.description }}</p>
+<p><strong>Diagnostic:</strong> {{ consultation.diagnostic }}</p>
+<p><strong>Antécédents:</strong> {{ consultation.antecedents }}</p>
+
+<!-- Buttons for Adding Related Data -->
+<a href="{% url 'ajouter_ordonnance' consultation.id %}" class="btn btn-primary">Ajouter Ordonnance</a>
+<a href="{% url 'ajouter_bilan_biologique' consultation.id %}" class="btn btn-secondary">Ajouter Bilan Biologique</a>
+<a href="{% url 'ajouter_bilan_radiologique' consultation.id %}" class="btn btn-success">Ajouter Bilan Radiologique</a>
+
+<!-- Display Related Data -->
+<h3>Ordonnances</h3>
+<ul>
+    {% for ordonnance in consultation.ordonnances.all %}
+        <li>{{ ordonnance.medicament }} - {{ ordonnance.dose }} - {{ ordonnance.duree }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Bilans Biologiques</h3>
+<ul>
+    {% for bilan in consultation.bilans_biologiques.all %}
+        <li>{{ bilan.type_analyse }}: {{ bilan.resultat }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Bilans Radiologiques</h3>
+<ul>
+    {% for bilan in consultation.bilans_radiologiques.all %}
+        <li>{{ bilan.type_examen }} <img src="{{ bilan.images.url }}" alt="Radiologie Image" width="100"></li>
+    {% endfor %}
+</ul>

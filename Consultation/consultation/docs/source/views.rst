@@ -1,0 +1,25 @@
+.. _views:
+
+Views
+=====
+
+creer_consultation
+-------------------
+
+.. autofunction:: cons.views.creer_consultation
+
+La fonction `creer_consultation` permet de créer une consultation pour un patient en récupérant ses informations via son NSS. Elle gère également l'ajout des ordonnances, des antécédents, des bilans biologiques et des bilans radiologiques.
+
+Ajouter Ordonnance
+------------------
+
+.. autofunction:: cons.views.ajouter_ordonnance
+
+Cette vue permet d'ajouter une ordonnance à une consultation existante.
+
+Ajouter Bilan Biologique
+-------------------------
+
+.. autofunction:: cons.views.ajouter_bilan_biologique
+
+Cette vue permet d'ajouter un bilan biologique à une consultation existante.

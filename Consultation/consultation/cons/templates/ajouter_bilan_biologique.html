@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un bilan biologique</title>
+</head>
+<body>
+    <h1>Ajouter un bilan biologique pour la consultation de {{ consultation.patient }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ajouter</button>
+    </form>
+    <a href="{% url 'detail_consultation' consultation.id %}">Retour à la consultation</a>
+</body>
+</html>

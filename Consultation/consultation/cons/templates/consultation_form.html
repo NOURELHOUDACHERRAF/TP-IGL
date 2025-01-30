@@ -1,0 +1,75 @@
+<form id="consultationForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- Consultation Fields -->
+    {{ consultation_form.as_p }}
+
+    <!-- Ordonnances -->
+    <div id="ordonnances-container">
+        <h4>Ordonnances</h4>
+        <div class="ordonnance">
+            <input type="text" name="ordonnances[0][medicament]" placeholder="Médicament">
+            <input type="text" name="ordonnances[0][dose]" placeholder="Dose">
+            <input type="text" name="ordonnances[0][duree]" placeholder="Durée">
+        </div>
+    </div>
+    <button type="button" onclick="addOrdonnance()">Ajouter Ordonnance</button>
+
+    <!-- Bilans Biologiques -->
+    <div id="bilans-biologiques-container">
+        <h4>Bilans Biologiques</h4>
+        <div class="bilan-biologique">
+            <input type="text" name="bilans_biologiques[0][type_analyse]" placeholder="Type Analyse">
+            <input type="text" name="bilans_biologiques[0][resultat]" placeholder="Résultat">
+        </div>
+    </div>
+    <button type="button" onclick="addBilanBiologique()">Ajouter Bilan Biologique</button>
+
+    <!-- Bilans Radiologiques -->
+    <div id="bilans-radiologiques-container">
+        <h4>Bilans Radiologiques</h4>
+        <div class="bilan-radiologique">
+            <input type="text" name="bilans_radiologiques[0][type_examen]" placeholder="Type Examen">
+            <input type="file" name="bilans_radiologiques[0][images]" multiple>
+        </div>
+    </div>
+    <button type="button" onclick="addBilanRadiologique()">Ajouter Bilan Radiologique</button>
+
+    <button type="submit">Créer Consultation</button>
+</form>
+
+<script>
+function addOrdonnance() {
+    const container = document.getElementById('ordonnances-container');
+    const index = container.querySelectorAll('.ordonnance').length;
+    container.insertAdjacentHTML('beforeend', `
+        <div class="ordonnance">
+            <input type="text" name="ordonnances[${index}][medicament]" placeholder="Médicament">
+            <input type="text" name="ordonnances[${index}][dose]" placeholder="Dose">
+            <input type="text" name="ordonnances[${index}][duree]" placeholder="Durée">
+        </div>
+    `);
+}
+
+function addBilanBiologique() {
+    const container = document.getElementById('bilans-biologiques-container');
+    const index = container.querySelectorAll('.bilan-biologique').length;
+    container.insertAdjacentHTML('beforeend', `
+        <div class="bilan-biologique">
+            <input type="text" name="bilans_biologiques[${index}][type_analyse]" placeholder="Type Analyse">
+            <input type="text" name="bilans_biologiques[${index}][resultat]" placeholder="Résultat">
+        </div>
+    `);
+}
+
+function addBilanRadiologique() {
+    const container = document.getElementById('bilans-radiologiques-container');
+    const index = container.querySelectorAll('.bilan-radiologique').length;
+    container.insertAdjacentHTML('beforeend', `
+        <div class="bilan-radiologique">
+            <input type="text" name="bilans_radiologiques[${index}][type_examen]" placeholder="Type Examen">
+            <input type="file" name="bilans_radiologiques[${index}][images]" multiple>
+        </div>
+    `);
+}
+</script>
